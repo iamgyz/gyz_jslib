@@ -1,4 +1,4 @@
-/*
+ï»¿/*
 * gyz javascript librayr 1.0
 * Copyright 2013 GYZ .
 *
@@ -7,9 +7,9 @@
 /* Function
 *gyz.talk('msg')
 *gyz.feedback('msg','defaultValue')
-* gyz.id('id')  //¥i¥Hcascading
+* gyz.id('id')  //å¯ä»¥cascading
 * gyz.tag('tag')
-* gyz.html('str') || gyz.id('id').html('str') ¦pªG­nappend «e¤è¥[<aft>  before «e¤è¥[<bef>
+* gyz.html('str') || gyz.id('id').html('str') å¦‚æœè¦append å‰æ–¹åŠ <aft>  before å‰æ–¹åŠ <bef>
 * gyz.value('str') || gyz.id('id').value('str');
 * gyz.goto(url)
 * gyz.toInt('str')
@@ -20,15 +20,15 @@
 *gyz.youtube(url,width,height)
 */
 
-//«Ø¥ßGYZªºÃş§O
+//å»ºç«‹GYZçš„é¡åˆ¥
 function GYZ()
 {
-this.obj=null;//obj­t³d¦s¨ú¥Ø«eªºª«¥ó											
-this.aobj=new Array();//aobj­t³d¦s¨ú¥Ø«eªº°}¦Cª«¥ó
-this.type=null; // type¬ö¿ı¥Ø«e¬OBy id or By tag
-this.tmp=null;//¬ö¿ıtempªº¸ê®Æ
+this.obj=null;//objè² è²¬å­˜å–ç›®å‰çš„ç‰©ä»¶											
+this.aobj=new Array();//aobjè² è²¬å­˜å–ç›®å‰çš„é™£åˆ—ç‰©ä»¶
+this.type=null; // typeç´€éŒ„ç›®å‰æ˜¯By id or By tag
+this.tmp=null;//ç´€éŒ„tempçš„è³‡æ–™
 }
-//	¥H¤U¬Ò¬°GYZªº¤èªk
+//	ä»¥ä¸‹çš†ç‚ºGYZçš„æ–¹æ³•
 
 GYZ.prototype.talk=function(msg)
 			{	
@@ -54,8 +54,8 @@ GYZ.prototype.id=function (idName)
 				if(o)
 				{
 					this.type='id';
-					this.obj=o; // ±N¥Ø«eªºobj³]©w¦¨³Q¨ú±oªºDOM								
-					return this;// !!­«­n return this¤~¯àcascading
+					this.obj=o; // å°‡ç›®å‰çš„objè¨­å®šæˆè¢«å–å¾—çš„DOM								
+					return this;// !!é‡è¦ return thisæ‰èƒ½cascading
 				}
 				else
 					console.log("No element");						
@@ -68,7 +68,7 @@ GYZ.prototype.tag=function (tagName)
 				{
 					this.type='tag';
 					this.aobj=o;
-					return this;// !!­«­n return this¤~¯àcascading
+					return this;// !!é‡è¦ return thisæ‰èƒ½cascading
 				}
 				else
 					console.log("No tags");						
@@ -79,7 +79,7 @@ GYZ.prototype.html=function(str)
 				if(typeof str==="undefined")
 					//console.log("Fail : Not str");
 					return this.obj.innerHTML;
-				else if(this.type=='id')//¦pªG¤W¤@­Ó§ìªº¬Oid
+				else if(this.type=='id')//å¦‚æœä¸Šä¸€å€‹æŠ“çš„æ˜¯id
 				{
 					if(str.length>2 && str.substr(0,2)=='+=')
 						this.obj.innerHTML+=str.substr(3,str.length);
@@ -89,14 +89,14 @@ GYZ.prototype.html=function(str)
 				}
 				else if(this.type=='tag')
 				{
-				//¥Ø«etagsªº§@ªk¬OµLªk«ü©w¡A¥u¯à¥ş³¡§ï
+				//ç›®å‰tagsçš„ä½œæ³•æ˜¯ç„¡æ³•æŒ‡å®šï¼Œåªèƒ½å…¨éƒ¨æ”¹
 					for(var i=0;i<this.aobj.length;i++)
 					{
 						if(str.length>2 && str.substr(0,2)=='+=')
-							this.aobj[i].innerHTML+=str.substr(3,str.length);//¦pªG¤W¤@­Ó§ìªº¬Otag
+							this.aobj[i].innerHTML+=str.substr(3,str.length);//å¦‚æœä¸Šä¸€å€‹æŠ“çš„æ˜¯tag
 						else if(str.length>2 && str.substr(str.length-2)=='+=')
-							this.aobj[i].innerHTML=str.substr(0,str.length-2)+this.aobj[i].innerHTML;//¦pªG¤W¤@­Ó§ìªº¬Otag
-						else  this.aobj[i].innerHTML=str;//¦pªG¤W¤@­Ó§ìªº¬Otag
+							this.aobj[i].innerHTML=str.substr(0,str.length-2)+this.aobj[i].innerHTML;//å¦‚æœä¸Šä¸€å€‹æŠ“çš„æ˜¯tag
+						else  this.aobj[i].innerHTML=str;//å¦‚æœä¸Šä¸€å€‹æŠ“çš„æ˜¯tag
 					}
 				}
 				else
@@ -108,7 +108,7 @@ GYZ.prototype.value=function(str)
 			{
 				if(!str)
 					console.log("Fail : Not str");
-				else if(this.type=='id')//¦pªG¤W¤@­Ó§ìªº¬Oid
+				else if(this.type=='id')//å¦‚æœä¸Šä¸€å€‹æŠ“çš„æ˜¯id
 				{
 					this.obj.value=str;
 					
@@ -117,13 +117,13 @@ GYZ.prototype.value=function(str)
 				{
 					for(var i=0;i<this.aobj.length;i++)
 					{
-						this.aobj[i].value=str;//¦pªG¤W¤@­Ó§ìªº¬Otag
+						this.aobj[i].value=str;//å¦‚æœä¸Šä¸€å€‹æŠ“çš„æ˜¯tag
 					}
 				}
 				else
 				console.log("Fail : Not obj");
 			};	
-//Âàsite						
+//è½‰site						
 GYZ.prototype.goto=function(url)
 			{
 				if(!url)
@@ -132,7 +132,7 @@ GYZ.prototype.goto=function(url)
 					document.location.href=url;
 			};
 
-//¹Á¸Õ±N¦r¦êÂà¬°¼Æ¦r					
+//å˜—è©¦å°‡å­—ä¸²è½‰ç‚ºæ•¸å­—					
 GYZ.prototype.toInt=function(n)
 			{
 				try
@@ -144,7 +144,7 @@ GYZ.prototype.toInt=function(n)
 					return null;
 				}
 			};
-//§ó§ïtitle					
+//æ›´æ”¹title					
 GYZ.prototype.title=function(str)
 			{
 				if(!str)
@@ -156,14 +156,14 @@ GYZ.prototype.title=function(str)
 
 GYZ.prototype.events=function(str,o)
 			{
-				if(!this.type)//¨Ã¨S¦³µù¥U¥ô¦óobj®É
+				if(!this.type)//ä¸¦æ²’æœ‰è¨»å†Šä»»ä½•objæ™‚
 					console.log('Fail : no obj');
 				else if(this.type=='id')
 					{
-					//µù¥U¨Æ¥ó
+					//è¨»å†Šäº‹ä»¶
 					this.obj.addEventListener(str,o, false);
-					/* addEventListener ©M removeEventListener ªº²Ä¤T­Ó°Ñ¼Æ useCapture ¦h¥b¶Ç¤J false ¡A¦]¬°¶Ç²Î¦¡©M IE ¦¡¬Ò¤£¤ä´© Capture ¶¥¬q°õ¦æ¨ç¦¡¡A¬°¤F¸óÂsÄı¾¹¬Û®e
-					¥u¦n§Ôµh©ñ±ó Capture ¶¥¬q°õ¦æ¨ç¦¡¡C
+					/* addEventListener å’Œ removeEventListener çš„ç¬¬ä¸‰å€‹åƒæ•¸ useCapture å¤šåŠå‚³å…¥ false ï¼Œå› ç‚ºå‚³çµ±å¼å’Œ IE å¼çš†ä¸æ”¯æ´ Capture éšæ®µåŸ·è¡Œå‡½å¼ï¼Œç‚ºäº†è·¨ç€è¦½å™¨ç›¸å®¹
+					åªå¥½å¿ç—›æ”¾æ£„ Capture éšæ®µåŸ·è¡Œå‡½å¼ã€‚
 					  eventname,function,bubble/capture
 					*/
 					}
@@ -177,8 +177,8 @@ GYZ.prototype.events=function(str,o)
 					
 			};
 
-//¥Î³~ §Ö³t¤Á´«¹Ï¤ù¤º®e				
-//¥u¯à¹ï³æ­Óelement	
+//ç”¨é€” å¿«é€Ÿåˆ‡æ›åœ–ç‰‡å…§å®¹				
+//åªèƒ½å°å–®å€‹element	
 GYZ.prototype.img=function(url)
 			{
 				if(!url)
@@ -193,7 +193,7 @@ GYZ.prototype.img=function(url)
 
 GYZ.prototype.show=function(bool)
 			{
-				//¨S¶Ç­È´Nµø¬°true
+				//æ²’å‚³å€¼å°±è¦–ç‚ºtrue
 				if(typeof bool == 'undefined' || bool== true)
 				{
 					if(this.type=='id')
@@ -225,10 +225,10 @@ GYZ.prototype.show=function(bool)
 				};
 		
 		
-//¦b¯S©wªº¤¸¯À¤º´¡¤Jyotube¼v¤ù
+//åœ¨ç‰¹å®šçš„å…ƒç´ å…§æ’å…¥yotubeå½±ç‰‡
 GYZ.prototype.youtube=function(url,width,height)
 			{
-				//¨ú¥XID ºtºâªk¥i¯àÁÙ­n§ï
+				//å–å‡ºID æ¼”ç®—æ³•å¯èƒ½é‚„è¦æ”¹
 				var tmp=url.indexOf("?v=");
 				if(tmp==-1)
 					tmp=url.indexOf("&v=") ;						
@@ -236,18 +236,18 @@ GYZ.prototype.youtube=function(url,width,height)
 				url=url.substring(tmp2);
 				tmpArr=url.split('&');
 				var videoID=tmpArr[0];
-				//«Ø¥ß¤¸¯À
+				//å»ºç«‹å…ƒç´ 
 				var ele=document.createElement('object');
 				ele.width= (width=='undefined')?width:560;
 				ele.height= (height=='undefined')?height:315;
 				ele.innerHTML='<embed src="http://www.youtube.com/v/'+videoID+'?version=3&amp;hl=zh_TW&amp;rel=0" type="application/x-shockwave-flash" width="'+width+'" height="'+height+'" allowscriptaccess="always" allowfullscreen="true">';
-				//´¡¤J«ü©wªº¦ì¸m
+				//æ’å…¥æŒ‡å®šçš„ä½ç½®
 				this.obj.appendChild(ele);					
 			}
 		
 GYZ.prototype.insert=function(str)
 			{						
-				//¦pªG¤w¸g¬Oobj
+				//å¦‚æœå·²ç¶“æ˜¯obj
 				if(typeof str =='object')
 				{
 					try{
@@ -257,7 +257,7 @@ GYZ.prototype.insert=function(str)
 					console.log('FAIL : Wrong para');
 					}
 				}
-				//¦pªG¬Oª½±µ´¡¤Jstr!! «n?
+				//å¦‚æœæ˜¯ç›´æ¥æ’å…¥str!! å—?
 				else if(typeof str=='string')
 				{
 					//...not yet
@@ -268,8 +268,8 @@ GYZ.prototype.insert=function(str)
 		
 GYZ.prototype.after=function(o)
 			{												
-				//check ¬O¤@¯ëªºDOM¤¸¯À¡AÁÙ¬Ogyzªºthis
-				if(o.type)//¥Nªí¬Ogyz
+				//check æ˜¯ä¸€èˆ¬çš„DOMå…ƒç´ ï¼Œé‚„æ˜¯gyzçš„this
+				if(o.type)//ä»£è¡¨æ˜¯gyz
 				{
 					if(o.type=='id')
 					{								
@@ -279,7 +279,7 @@ GYZ.prototype.after=function(o)
 					{
 					}
 				}
-				//after«á­±¥i¯à¬O¨Ï¥ÎªÌ¦Û­qªºDOM¤¸¯À
+				//afterå¾Œé¢å¯èƒ½æ˜¯ä½¿ç”¨è€…è‡ªè¨‚çš„DOMå…ƒç´ 
 				else
 				{
 					try{
@@ -294,6 +294,6 @@ useful event list
 https://developer.mozilla.org/en-US/docs/DOM/Mozilla_event_reference?redirectlocale=en-US&redirectslug=Mozilla_event_reference
 */					
 
-var gyz = new GYZ(); //«Ø¥ßgyzª«¥ó¨Ñ¨Ï¥ÎªÌ¾Ş§@
+var gyz = new GYZ(); //å»ºç«‹gyzç‰©ä»¶ä¾›ä½¿ç”¨è€…æ“ä½œ
 var $=gyz;
 
