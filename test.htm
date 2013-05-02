@@ -1,0 +1,110 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>gyz test</title>
+<script src="gyz.js"></script>
+<div id='s1'>xxxxxx</div>
+<div id='s'>s</div>
+<span id='s2'>qqq</span>
+
+<input type='text' value='123' id='aa' />
+<br>
+<img src='1.jpg' id='img'/>
+<img src='2.jpg' id='img2'/>
+
+
+<a href='1.jpg'><img src='2.jpg' id='img3'/></a>
+
+
+<script>
+gyz.id('s1').youtube('www.youtube.com/watch?v=xi6wOaZ61-U');
+gyz.title('test');
+str=123;
+//alert(gyz.id('s1').html());
+gyz.tag('img').show(false);
+gyz.id('s1').html('123');
+gyz.id('s').html('我要去+=')
+gyz.tag('div').html('123123+=')
+gyz.id('aa').value('123222')
+//alert(gyz.id('s1').html());
+gyz.tag('img').show();
+/*
+gyz.id('s1').html('asd');
+gyz.id('s1').html('<aft>after');
+
+gyz.id('s1').html('');
+*/
+var node = document.createElement("a");
+ node.innerHTML='ok';
+gyz.insert(node).after(gyz.id('s1'));
+
+//gyz.insert(node).after(gyz.id('s1'));
+//gyz.insert('<a>ss</a>').after(gyz.id('s1'));
+gyz.id('s1').events(
+'click',
+function()
+{
+gyz.id('img').img('2.jpg');
+}
+);
+//alert(gyz.id('img3'));
+//gyz.id('s1').html('asd');
+
+//gyz.id('img3').img('1.jpg');
+
+//$.obj.src='2.jpg';
+//gyz.insert('<a>hi</a>').after(gyz.id('s1'));
+
+//alert(a.);
+//document.getElementById('img3').src="1.jpg";
+/*
+gyz.tag('img').events(
+'mouseover',
+function ()
+{
+alert('ok2');
+}
+);
+*/
+
+//gyz.talk('hi');
+//gyz.feedback('asd',123);
+//gyz.id('s');
+//gyz.html('test1');
+//gyz.id('s').html('test2');
+
+/*
+alert('go');
+gyz.tag('div').html('1111');
+alert('stop');
+gyz.id('aa').value('2222');
+alert('stop');
+gyz.tag('input').value('123');
+*/
+//gyz.msg('hi','hey');
+//gyz.html('123');
+//gyz.msg('no1');
+//gyz.html('123');
+//gyz.msg();
+//a=gyz.id('s');
+//gyz.msg('after id');
+//gyz.html('123');
+//a.innerHTML='asd';
+//b=gyz.id('ss');
+//gyz.value(gyz.id('aa'),'hi');
+//gyz.tag('input')[0].innerHTML='haaaa';
+//gyz.msg('after tag');
+//gyz.html('123');
+
+
+//gyz.site('http://yahoo.com');
+//document.getElementById('s').innerHTML='asdasd';
+//b.innerHTML='asdasd';
+//var car = new Car('Ford','Focus','629000','2006');
+
+//car.fun2('123');
+//gyz.goto('http://www.yahoo.com.tw');
+</script>
+</body>
+</html>
